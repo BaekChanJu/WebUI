@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 연습</title>
+
+<!-- div 에서 컬러 지정하면 마지막껄로 덮어짐 -->
+<!--.point10 {color : #FFAA33;} 클래스껄 찾아오려면 . 붙혀주고 해주면됨 -->
+<!-- 그리고 클래스로 찾아서 색상을주면 점수가더높은 클래스로 정한걸로 지정을해준다 색상을 -->
+<!-- 아이디로 찾을땐 #  #point100 {color : cyan;} 클래스보다 id가 가중치 점수가 더높음-->
+<!--  그래서 #point로 최종지정됨 이렇게 가중치로 한다 -->
+
+<style type="text/css">
+
+	/*div.point10 {color : #FFAA33;}*/
+		
+	 div{color : green;}
+	div{color : red;}
+	
+	/*div#point100 {color : cyan;}*/
+	
+	/*
+	
+	만약 이 2개가있을때
+	body div{color : green;}
+	div{color : red;}
+	레드가 나와야하는데 해보면 그린이 나옴 왜냐
+	가중치로 따지면
+	body1점 div1점 총2점
+	레드는 div1점으로 최종 그린이나옴
+	*/
+	
+	/*인풋에 뭘 넣어도 라디오박스 체크박스는 안먹는다*/
+	/*input {border : 1px solid pink;}*/
+	
+	
+	/*인풋에 타입이 텍스트인 녀석들만 저런 걸 먹이겠습니다 ~*/
+	/*input[type = 'text'] {border : 1px solid pink;}*/
+	
+	/*첫번째요소와 마지막 요소에 지정 ~*/
+	/*input:first-child {border : 1px solid pink;}
+	input:last-child {border : 1px dotted red ;}*/
+	
+	/*5번째 애를 바꾸라 이건데 프로그램 언어가 아닌css는 인덱스가 1부터 출발이다*/
+	/*그래서 아래 입력2칸이 변하는것*/
+	/*input:nth-child(5) {border : 3px dashed red;}*/
+	
+	/*문제 맨뒤에서 2번째 친구를 검정색으로*/
+	input:nth-last-child(2)  {border : 3px dashed black;}
+</style>
+
+</head>
+<body>
+	
+	<div id="point100" class="point10">안녕하세요</div>
+	
+	
+	<p>
+		<input type="text" value="입력1">
+		<input type="checkbox"> 선택
+		<input type="radio" name="rd"  checked="checked"> 예
+		<input type="radio" name="rd"> 아니오
+		<input type="text" value="입력2" disabled="disabled">		
+		<input type="button" value="확인">
+		<input type="button" value="취소">
+	</p>
+	
+	
+</body>
+</html>

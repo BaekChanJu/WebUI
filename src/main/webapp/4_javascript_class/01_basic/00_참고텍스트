@@ -1,0 +1,16 @@
+
+<가장보편화된 방법>
+Presentation >  HTML,CSS,JS 기본화면 틀만들기
+
+Application	>  JSP (asp/php) 서버단
+
+Database > Oracle(mysql) 데이터 저장 (디비연동)
+
+
+
+<js군단> - 100% js만으로도 만들기가 가능은함
+Presentation >  HTML,CSS,JS 기본화면 틀만들기
+
+Application	>  nodejs 
+
+Database > mongodb > js형태로 db

@@ -1,0 +1,74 @@
+<!-- 
+element (tag)
+	-block 요소 (블락엘리먼트) : 기본개행 h,li 개행됨 엔터치고내려가는 ul은 그냥 점, ol은 순번
+	-inline 요소 : 기본 개행되지 않는 요소
+
+ -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title> 카레만들기 </title>
+	
+<style>
+/*이렇게 구문에 타입넣지말고 여기서 타입을 잘 지정해주자*/
+	ul>li { list-style-type : square; }
+	
+	/*ol>li {list-style-type : upper-alpha;}*/
+	
+	/*ol>li {list-style-type : none;} 주면 아무것도 안뜨게됨 이걸 왜넣냐 이미지 넣으려고!!*/
+	/*요즘은 잘안씀여*/
+	ol>li {list-style-type : none;
+				list-style-image: url(../images/common/icon_h2.glt)}
+	
+	
+	/*논 줬더니 한글로 5자이내 입력하세요 이글자가 안보임 개발자 모드에서는보임 */
+	span{display : none;}
+	/*개행시키려면 블록주면됨 눌렀을때 글자가 보이게 하는것임 */
+	/*인풋에 포커스해주고 바로 다음스팬에 인라인준것임 안보였던게 네모칸 누르면 옆에글씨가뜸*/
+	input:focus + span {display : inline;}
+</style>
+	
+	
+</head>
+<body>
+
+<input type = 'text'><span>한글로 5자이내 입력하세요</span>
+<hr/>
+
+
+<img src='/WebUI/images/sample/curry.jpg' width='250' height ='154'>
+<img src='../images/sample/curry.jpg' alt = '당근,양파,브로콜리가 들어있고 하얀접시에 담긴 카레'>
+
+<h1>커리(Curry) 재료</h1>
+	<ul>
+		<li>카레 가루 100g</li>
+		<li>닭가슴살 200g</li>
+		<li>감자 1개</li>
+		<li>양파 1/2개 </li>
+		<li>당근 1/2개</li>
+	</ul>
+
+<h2>커리(Curry) 만드는 법</h2>
+	<ol type ='I'>
+		<li>카레 가루 8큰술에 물 6큰술을 넣어 풀어놓는다.</li>
+		<li>닭가슴살, 감자, 양파, 당근 등을 따로 중불에 살짝 볶는다.</li>
+		<li>볶아 놓은 재료를 카레를 풀어놓은 물과 함께 냄비에 넣고 물 2컵을 부은 후 15분 정도 끓인다.</li>
+	</ol>
+<hr/>  <!-- 태그 다하고닫아주기 그러면 문장아래  --- 선이생김 -->
+
+
+
+<!--  무언가 설명해줄때 dl dt 딱히 뭐 안해주지만 구조를 잡아줌 -->
+<dl>
+	<dt>양파</dt>
+		<dd>외떡잎식물 백합목 백합과의 두해살이풀</dd>
+	당근
+	쌍떡잎식물 산형화목 미나리과의 두해살이풀.
+</dl>	
+		
+</body>
+</html>
