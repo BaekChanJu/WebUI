@@ -6,13 +6,22 @@
 <script type="text/javascript">
 
 	window.onload = function(){
-		// 1. alert
+		/* // 1. alert
+		alert('이 사이트는 이사감'); //실행동시에 화면이 바로뜸 윈도우네모칸이
+		window.location.href = 'http://www.ikosmo.co.kr';
+		//이 사이트 이사감 나오고 확인 누르면 저 사이트로 이동함
+		//window.location = 'http://www.ikosmo.co.kr' 축약형;
+		 */
 		
-		
-		// 2. confirm
-		
-		
-		// 3. prompt : 
+		// 2. confirm yes(true)/no(false)가 있다 alert은 확인만 있는데
+			//if문 없으면 확인 취소든 다 넘어가니까 if문에 사용해주자
+		/* var result = confirm('변경된 주소로 이동할까요?');
+		 if(result) window.location = 'http://www.ikosmo.co.kr'
+		  */
+		// 3. prompt :  네모칸 무언가를 묻는 창을만들어줌
+			//url http부터 쳐주면 그사이트로 넘어감
+		var inputText = prompt('이동하기 원하는 url 은?');
+		window.location = inputText;
 		
 	}
 

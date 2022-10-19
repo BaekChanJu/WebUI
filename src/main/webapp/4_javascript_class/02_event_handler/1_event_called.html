@@ -3,9 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <title> 이벤트 핸들러 연결 </title>
+
+
+<script type="text/javascript">
+
+
+	
+/* 	function btn_click() {
+		alert('버튼클릭'); 
+	} */
+	
+	//js에서 함수도 리터럴 즉 변수에 담을 수있음
+var btn_click = function(){
+		alert('버튼클릭2'); 
+	};
+	
+</script>
+
 </head>
 
 <body>
+	<!-- 1번 연결 사용한 예시 이러면 html,js를 섞어서 쓰는방식임 요즘안씀-->
 	<input type='button' value='눌려' onclick='btn_click()' />
 </body>
 </html>

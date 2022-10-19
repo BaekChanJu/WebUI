@@ -8,19 +8,51 @@
 // 1. 배열의 함수 확인
 
 	var arr = ['김태희','송혜교','전지현','김고은','임수정'];
-	document.writeln( arr + '<br/>');
+	document.write(arr.join('/') + '<br/>'); //  / 기준으로 나눠줌
+	document.write(arr.slice(3) + '<br/>'); // 김고은 임수정 나옴 인덱스번호로 3번부터 그후
+	document.write(arr.slice(1,3) + '<br/>'); //1번에서시작 3번 앞까지 출력
+	
+	document.write(arr.reverse() + '<br/>'); //역순으로 나오게함
+	document.write(arr + '<br/>'); //대신 지금 이 원본까지 변해버림 
+	// 그래서 리버스 소트 등 사용할때는 원본도 바꾸나? 확인을 같이 해줘야함
+			
+	document.write(arr.sort()+ '<br/>'); //ㄱ ㄴ ㄷ 정렬
+	document.write(arr + '<br/>'); //sort도 원본해침 그래서 원본을 다른변수에 꼭 저장해두자
+	
+	
+	////////////////////////////////////////////////////////////////
+	
+	
+	
+	var temp = ['강동원','고수'];
+	document.write(arr.concat(temp)+ '<br/>'); //위 arr에 콘캣으로 temp배열 붙히기
+	document.write(temp + '<br/>'); //원본 안변함
+	
+	
+	var arr2 = [5,15,20,9]; //sort가 문자열로 처리해서 숫자정렬이 앞에 15 20 5 9 이순으로나옴
+	document.write(arr2.sort()+'<br/>');
+	
+			
+	
+	
+	
+	
 
 	
 	// 2. 배열을 스택과 큐로 이용하기
-	/* 	var data = [];
+			//스택 : LIFO (나중에 들어간에가 먼저빠짐)
+				//js에서는 push로 넣고 pop으로 뺴주면 알아서 스택구조를 만들어줌
+	 	var data = [];
 		data.push('박서준');
 		data.push('현빈');
 		data.push('박보검');
 		document.writeln( data.pop() + "<br/>");
 		document.writeln( data.pop() + "<br/>");
 		document.writeln( data.pop() + "<br/>");
-		document.writeln( data.pop() + "<hr/>");
+		document.writeln( data.pop() + "<hr/>"); //존재하지 않는 값 넣으면 uf
 		
+			//큐 : FIFO (선착순 개념)
+				//시프트로 빼면 제일먼저 들어간 사람부터 빠진다
 		var data2 = [];
 		data2.push('박소담');
 		data2.push('김고은');
@@ -28,10 +60,17 @@
 		document.writeln( data2.shift() + "<br/>");
 		document.writeln( data2.shift() + "<br/>");
 		document.writeln( data2.shift() + "<br/>");
-		document.writeln( data2.shift() + "<hr/>");	 */
+		document.writeln( data2.shift() + "<hr/>");	 
 			
 	// 3. es6
-
+	//'김태희','송혜교','전지현','김고은','임수정' 원본임
+	document.writeln(arr.copyWithin(1,2,3) + "<br/>");
+	//(타겟,스타트,엔드) 즉 1인 송혜교를 복사를 한다음 복사를시작할위치 2 3번이 복사를끝날위치
+	
+	document.writeln(arr.fill('박소담',1,3)+ "<br/>")//박소담을 복사 1부터시작3앞까지 박소담으로채우기
+	
+	
+	
 	
 	
 
@@ -40,6 +79,11 @@
 	// (1) forEach 메소드 :  배열의 내용을 순서대로 처리
 	//			array.forEach(function(요소의값, 인덱스번호, 원래의배열){})
 
+		let date=['강','백','정'];
+	
+		date.forEach(function(value, index,data){
+			document.writeln(index + ":" + value +"<br/>");
+		});
 	
 	// (2) map 메소드 : 배열을 지정된 규칙으로 가공하기
 

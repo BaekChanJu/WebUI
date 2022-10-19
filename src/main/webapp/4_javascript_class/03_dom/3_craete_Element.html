@@ -9,7 +9,8 @@
   window.onload = function(){
 	
 	  var bInsert = document.getElementById('bInsert');
-	  bInsert.onclick = insertCustomer;
+	  bInsert.onclick = insertCustomer; // insertCustomer() 쓰면안됨
+	  //지금은 연결하는 거니까 이벤트와 function(){} 이것도 가능
 
   }
   
@@ -18,13 +19,40 @@
 	    	원래 처음의 원칙대로 하지만 최근에는 간소화된 함수들이 있으니 찾기
 	    	insertRow() , insertCell() 등
 	    */
-		// 1. 입력한 값들을 얻어온다.
-		// 2. 테이블요소 얻어온다.
+		// 1. 입력버튼이 눌려지면 사용자가 뭐라고 입력했는지 입력값을 얻어와야한다
+			//이러면 사용자가 입력한 값이 바로 변수에 담기는 것이겠지?
+		var name = document.getElementById('name').value; 
+		var age = document.getElementById('age').value; 
+		var tel = document.getElementById('tel').value; 
+		var addr = document.getElementById('addr').value; 
+		// 2. 테이블요소 얻어온다. 
+			//테이블아이디는 "listTable" 였다
+				//tbl 변수에 테이블주소가 통으로 담긴것
+		var tbl = document.getElementById('listTable');
 		// 3. tr 요소와 td 요소를 생성한다.
+			//document.createElement 요소만들떄 사용
+		var tr = document.createElement('tr'); //테이블로우 가로줄을 만드는역활
+		var td1 = document.createElement('td'); //테이블데이타
+		var td2 = document.createElement('td'); //테이블데이타
+		var td3 = document.createElement('td'); //테이블데이타
+		var td4 = document.createElement('td'); //테이블데이타
 		// 4. 텍스트노드(1번의 입력값)로 생성한다.
-		// 5. td 요소에 텍스트노드를 붙인다.
+		var txt1 = document.createTextNode(name);
+		var txt2 = document.createTextNode(age);
+		var txt3 = document.createTextNode(tel);
+		var txt4 = document.createTextNode(addr);
+		// 5. td 요소에 텍스트노드를 붙인다. // 붙히기 어팬드차일드 쓰기
+		td1.appendChild(txt1);
+		td2.appendChild(txt2);
+		td3.appendChild(txt3);
+		td4.appendChild(txt4);
 		// 6. tr 요소에 생성한 td 요소를 붙인다.
+		tr.appendChild(td1);
+		tr.appendChild(td2);
+		tr.appendChild(td3);
+		tr.appendChild(td4);
 		// 7. 테이블요소에 tr요소를 붙인다.
+		tbl.appendChild(tr);
 		
 	
 	}
