@@ -41,7 +41,7 @@ window.onload = function(){
 	}
 
 	//일 구하기 해당되는 달의 마지막 날까지 나와야함
-	for(var j=1 ;j<=lastDays[month]; j++){ //[month-1]
+	for(var j=1 ;j<=lastDays[month-1]; j++){ //[month-1]
 		frm.d.add(new Option(j, j));
 	}
 

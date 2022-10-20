@@ -12,19 +12,14 @@ m.set('script','2222');
 m.set('nodejs', '2222');
 m.set('java','3333');
 
+	//for in 인덱스를 추출   /  for of 요소를 추출
 
-//for..in , for ,,of js에서의 향상된 for문
-//for in 인덱스를 추출   /  for of 요소를 추출
-
-/* for(var k of m){ //키 벨류중 누가 요소일까?
-		document.write(K[0] + / + k[1]+ '</br>');	
-}
-
- */
+//결과적으로 for in 은 - 객체에서 반복된다
+//		for of 는 - 배열에서 반복된다
 
  //배열처럼나옴
  for(var [k,v] of m){
-	 document.write(k+'/'+v+ '</br>') //'java','3333'); 으로 자바키 같은게 덮어짐
+	 document.write(k+'/'+v+ '</br>') // 키 부분이 동일하면 맨 마지막으로 덮혀짐
  }
 
 
@@ -46,7 +41,7 @@ s.add('dog');
 for(var k in s){ 
 	document.write(k + '/' + s);
 }
-//for of 실행되고 마지막 dog 가 없어짐
+//for of 실행되고 마지막 dog 가 없어짐 / 오브젝트 타입으로나옴 왜냐면 배열이 아닌 요소를 돌린거니까
 for(var k of s){
 	document.write(k + '/' + s + '</br>');
 }
