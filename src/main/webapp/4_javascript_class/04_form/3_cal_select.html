@@ -30,11 +30,57 @@ window.onload = function(){
 	var frm = document.frm;
 	
 	// 년 구하기
-	for( var j=year-5;  j<= year+5; j++){
-		frm.y.add( new Option(j, j));				// 만들고 브라우저 F12에서 Elements로 확인 : Option(j)와 Option(j,j) 차이
+	for( var j=year-5;  j<= year+5; j++){ //2022년 기준 +- 5년 되어있음
+		frm.y.add( new Option(j, j));//옵션을 js에세 바로만들어줌
+		// 만들고 브라우저 F12에서 Elements로 확인 : Option(j)와 Option(j,j) 차이
+	}
+	
+	//월 구하기
+	for( var j=1; j<=12; j++){
+		frm.m.add( new Option(j, j));
 	}
 
+	//일 구하기 해당되는 달의 마지막 날까지 나와야함
+	for(var j=1 ;j<=lastDays[month]; j++){ //[month-1]
+		frm.d.add(new Option(j, j));
+	}
+
+	 
+	//오늘의 년 월 일로 화면을 지정
+	frm.y.value = year;
+	frm.m.value = month+1;
+	frm.d.value = date;
+
+	
+	//이벤트연결
+	frm.y.onchange = calc;
+	frm.m.onchange = calc;
+	frm.d.onchange = calc;
+	calc(); //calc 함수를 다 만들었다면 여기서 이벤트호출시 함수 호출하면
+	//요일이 뜬다
+	
+	function calc(){
+		let y = frm.y.value;
+		let m = frm.m.value;
+		let d=  frm.d.value;
+		
+		var day = new Date();
+		day.setFullYear(y);
+		day.setMonth(m-1);
+		day.setDate(d);
+		
+		frm.d.options.length = 0; //이걸하고 실행하면 일이 없어짐
+		
+		 frm.w.value = weeks[day.getDay()];
+		
+		//일 구하기에서 달마다의 맥스 일자 구하는법
+		 for(var j=1 ;j<=lastDays[m-1]; j++){ 
+				frm.d.add(new Option(j, j));
+			}
+	}
 }
+	 
+
 </script>
 
 </head>

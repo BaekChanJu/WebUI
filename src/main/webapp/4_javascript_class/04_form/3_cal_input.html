@@ -5,6 +5,35 @@
 <title> 폼 예제 3 </title>
 <script type="text/javascript">
 
+//1020일 복습꼭 하자
+window.onload = function(){
+ var today = new Date();
+	 frm1.y.value = today.getFullYear();
+	frm1.m.value = today.getMonth() +1;
+	frm1.d.value = today.getDate(); 
+	
+	document.querySelector('#btn').onclick = function(){
+		//1화면에 각각의 년 월 일 값을 얻어오기
+			//위에서 구해서 텍스트에 나오는값을 변수에 담아두고
+		let y = frm1.y.value;
+		let m = frm1.m.value;
+		let d=  frm1.d.value;
+		
+
+		//2 Date()객체에 각각의 년 월 일 값을 지정
+		var day = new Date();
+		day.setFullYear(y);
+		 day.setMonth(m-1);
+		 day.setDate(d);
+		
+		//3 해당 날짜의 요일을 구하여 화면에 출력하라
+		let week = ['일','월','화','수','목','금','토'];
+		
+		//겟데이는 사실 숫자가 나오는데 월화수 넣어놓은 배열안에 넣었으니 요일이잘뜬다
+		frm1.w.value = week[day.getDay()];
+	}
+}
+
 </script>
 </head>
 <body>

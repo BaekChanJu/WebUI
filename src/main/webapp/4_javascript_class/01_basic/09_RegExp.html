@@ -9,12 +9,23 @@ var p = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w-.\/?%&=]*)?/gi;
 //var p = new RegExp('http(s)?://([\\w-]+\\.)+[\\w-]+(/[\\w-./?%&=]*)?','gi');
 var str = '한 번을 둘러봐야 하는 사이트 http://www.w3schools.com/ 입니다';
 str += ' 또한 집중적으로 봐야하는 사이트 http://jqapi.ru/ 입니다';
+document.write(str + '<hr/>')
 
 
+//  위 str에서 저 사이트 정규식만 뽑아놓고 싶을때 쓰는 정규식  match
+var result = str.match(p);
+for(var r of result){
+	document.write(r)
+}
 
-// 매치 성공여부 검증 
+
+// 매치 성공여부 검증 - 해당하는게 있는지 없는지 search 
 var one = '한 번을 둘러봐야 하는 사이트 http://www.w3schools.com/ 입니다';
 var two= '또한 집중적으로 봐야하는 사이트 http://jqapi.ru/ 입니다';
+
+document.write(one.search(p) + '<hr/>') //주소 잘나옴
+document.write(two.search(p) + '<hr/>') //인덱스나옴
+
 
 
 </script>

@@ -5,19 +5,69 @@
 <title> 폼 예제 2</title>
 </head>
 <script type="text/javascript">
+window.onload = function(){
+	
+	//1020일 복습 꼭하자
+	
+	document.getElementById('up').onclick = function(){
+		var idx = frm.play.selectedIndex; //셀렉티드인덱스로 인덱스 일단확인
+		var optSel = frm.play.options; //옵션스로 옵션을찾을수있음 근데 옵션여러개니 배열로담김
+		
+		//태그와 태그사이에 갑 추출할때는 텍스트
+			//인풋태그 안에서 벨류나 가져올때는 벨류선언
+			//그냥있기는2번째다 그냥있기선택후 -1되면 밥먹기지? 그럼 그냥있기자리에 밥먹기를 넣어라 의미
+				//맞바꾸기의 의미	
+			if(idx>0){
+		var temp = optSel[idx].text;
+		optSel[idx].text = optSel[idx-1].text;
+		optSel[idx-1].text = temp;
+		optSel[idx-1].selected = true; //원랙셀렉티드로
+		}else if(idx == 0){
+			var temp = optSel[idx].text;
+			optSel[idx].text = optSel[5].text;
+			optSel[5].text = temp;
+			optSel[5].selected = true; //원랙셀렉티드로
+		}
+	}
+	
+	
+	
+	document.getElementById('down').onclick = function(){
+		var idx = frm.play.selectedIndex; 
+		var optSel = frm.play.options; 
+		
+		if(idx>=0){  //frm.play.options.length -1
+	var temp = optSel[idx].text;
+	optSel[idx].text = optSel[idx+1].text;
+	optSel[idx+1].text = temp;
+	optSel[idx+1].selected = true; 
+	}else{
+		
+	}
+		
+		
+		
+		
+		
+}
+	
+}
+
+
 </script>
 <body>
 
 내가 제일 좋아하는 놀이 순서대로 한다면 <br>
 
 <form name="frm">
-<select name="play" size="8">
-	<option selected> 숨쉬기 </option>
-	<option> 밥먹기 </option>
-	<option> 그냥있기 </option>
-	<option> 잠자기 </option>
-	<option> 술먹기 </option>
-	<option> 멍때리기 </option>
+<select name="play" size="6">
+	<!-- 셀렉티드는 아얘 거기에 클릭이 되어있음 -->
+	<option > 떄리기 </option>
+	<option> 갈구기 </option>
+	<option> 뻇기 </option>
+	<option selected> 퍽치기 </option>
+	<option> 장물치기 </option>
+	<option> 폭력 </option>
 </select> <br>
 
 <input type="button" id='up'	value="▲"><br><br>

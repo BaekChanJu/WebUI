@@ -13,8 +13,19 @@ m.set('nodejs', '2222');
 m.set('java','3333');
 
 
+//for..in , for ,,of js에서의 향상된 for문
+//for in 인덱스를 추출   /  for of 요소를 추출
 
+/* for(var k of m){ //키 벨류중 누가 요소일까?
+		document.write(K[0] + / + k[1]+ '</br>');	
+}
 
+ */
+
+ //배열처럼나옴
+ for(var [k,v] of m){
+	 document.write(k+'/'+v+ '</br>') //'java','3333'); 으로 자바키 같은게 덮어짐
+ }
 
 
 /* [참고] Map과 객체 리터럴의 차이 
@@ -23,10 +34,6 @@ m.set('java','3333');
  	2) Map은 size를 통해 요소의 갯수를 파악한다
  */
 
- 
- 
- 
- 
 //-------------------------------------------------------
 // 2. Set  : 중복 값을 허용하지 않는 집합 관리 객체
 let s = new Set();
@@ -34,6 +41,41 @@ s.add('tiger');
 s.add('dog');
 s.add('lion');
 s.add('dog');
+
+//for in 은 실행이안됨
+for(var k in s){ 
+	document.write(k + '/' + s);
+}
+//for of 실행되고 마지막 dog 가 없어짐
+for(var k of s){
+	document.write(k + '/' + s + '</br>');
+}
+
+//결론  for of 를 써야함
+//set의 가장 좋은 예시는 로또
+
+/* let lotto = new Set();
+//갯수가 6개니까 for문이라고 할탠데 로또는 중복값제거하면서 꼭 6개가 지정되야하니 
+//6개라고 확신할수가없음 중복값이 있으니 그래서 while 사용
+while(lotto.size<6){
+	//랜덤수를 추출하기 set에 추가 이미 와일에서6지정하니 안쪽은 for문으로
+	let num = parseInt(Math.random()*45) +1;
+	lotto.add(num);
+}
+for(let rnum of lotto){
+	document.write(rnum + '/')
+}
+ */
+
+var lotto = new Set();
+ while(lotto.size<6){
+	 var num = parseInt(Math.random()*45) +1;
+	 lotto.add(num);
+ }
+ 
+ for(var rnum of lotto){
+		document.write(rnum + '/')
+	}
 
 
 </script>

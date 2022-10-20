@@ -4,6 +4,41 @@
 <meta charset="UTF-8">
 <title></title>
 <script type="text/javascript">
+	window.onload = function(){
+		
+		//1020일 복습 꼭하자
+		
+		// form의 id인 myForm 의 txt0찾기 그다음 밸류로 하하값지정
+			//객체아래 누군가 찾을때 . 을쓴다
+		//myForm.txt0.value = '하하';
+		//myForm['txt1'].value = '호호'; //배열같은 패턴도 먹힌다
+		//그래서 문자열이니까 이친구는 반복문도 돌릴 수 있음 상황상황마다 사용이 가능
+		
+		
+		
+		//btn 눌렸을때 ㅇk 뜨게 만듬일단
+	/*  document.getElementById('btn').onclick = function(){
+		 //alert('ok');
+		 for(var i = 0 ; i<4; i++){
+			 //txt에 반복된 i 를 더해주고 / data도 data 값에 반복된 수 i를 더해준다
+			 myForm['txt' +i].value = 'data-' +i;
+		
+		 }
+	 }
+		 */
+		 //셀렉터는 아이디든 클래스든 다대려올수있으니까 # . 으로 구별해주자
+		 	//ById 나 클래스 일일이 지정해서 호출이아니라
+		 	//편하게 불러올수있다는 장점 
+		document.querySelector('#btn').onclick = function(){
+			 for(var i = 0 ; i<4; i++){
+				 myForm['txt' +i].value = 'data-' +i;
+			
+			 }
+		 }
+			
+		
+	}
+
 
 </script>
 </head>
