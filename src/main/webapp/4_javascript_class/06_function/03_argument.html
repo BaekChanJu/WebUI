@@ -5,8 +5,36 @@
 <title> 03_argument.html </title>
 <script type="text/javascript">
 
-//@함수는 인자의 갯수를 체크하지 않는다.
 
+
+
+//@함수는 인자의 갯수를 체크하지 않는다.
+ function multiple(first, second){
+	return first*second;
+}
+document.write('곱은' +multiple(3,4) + '<br/>' ); // 잘나오겠지 12 
+document.write('곱은' +multiple(3,4,5) + '<br/>' ); // 하나를 더추가하면?  12 / 그냥안받은것뿐
+document.write('곱은' +multiple(3) + '<br/>' ); // 하나를 더 안넣어주면? NaN / 2번은 언디파운드니 낫어넘버
+
+		//js에서는 오버리딩이 어캐될깡
+		//js에서는 인자갯수 체크를 안함 그럼 오버로딩이 없다라는것임 
+		//즉 함수명이 동일하면 안됨
+		
+		
+		
+		
+		
+		
+		
+/*function multiple(args){
+	return args.frist * args.second;
+	
+}
+
+var obj = {frist : 2, second : 4};
+document.write('곱은' +multiple(obj) + '<br/>' ); */
+		
+		
 </script>
 </head>
 <body>

@@ -2,7 +2,7 @@
 function arrayProcess( data, f ) {
 	for( key=0; key < data.length; key++ ){
 	//for(var key in data ){
-		f(  data[key].value );
+		f(  data[key].value ); //f자리에 사실 sum 이들어온거임 그래서 sum이라는 함수가 실행된거임
 	}
 }
 

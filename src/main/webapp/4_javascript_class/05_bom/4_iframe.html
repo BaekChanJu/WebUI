@@ -5,6 +5,26 @@
 <title> 부분독립페이지 </title>
 <script type="text/javascript">
 
+window.onload = function(){
+		var sel = 	frm.site;
+		
+		for(var i = 0 ; i<sel.length; i++){
+			sel[i].onclick = function(){
+				//alert(this.value); 
+				//현재창의 부속인 iframe 안에 요소는
+				//iframe 의 name 값으로 찾는다
+				//내꺼.남꺼.남꺼.값
+				//여기서의 결과가 sub 란의 값으로 들어가는거임
+				ifrm.fm.result.value= this.value;
+			
+				}
+			}
+		}
+		
+
+
+
+
 </script>
 </head>
 <body>

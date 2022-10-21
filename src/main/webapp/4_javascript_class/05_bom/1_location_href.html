@@ -5,11 +5,53 @@
 <title> window 예제 </title>
 <script type="text/javascript">
 
-		/*
-		1. 선택한 옵션의 값(value)을 얻어온다.
-		2. location 객체의 href 프로퍼티에 url을 지정
-		*/
-
+	window.onload = function(){
+		/* var sel = document.querySelector('#chooseSite');
+		sel.onchange = showSite; //select 에서는 onchange 쓰장
+		
+		function showSite(){
+			
+			1. 선택한 옵션의 값(value)을 얻어온다.
+			2. location 객체의 href 프로퍼티에 url을 지정
+		
+			
+			var nextPage = sel.value; //입력값을 가져오려면 value / value="http://www.daum.net"  이값들이 뜸
+			
+			window.location.href = nextPage; //벨류값 받아와서 페이지 열리게 만들기
+			//윈도우에 로케이션관리하는데 위에바에  href 즉 값을 바꿔준다라는 거임
+			//여기는 사이트가 열리면 뒤로가기도 생김
+			
+			window.location.replace(nextPage); //위랑동일한데 살짝다름 / 윈도우 생략가능
+			//다른점은 여기는 사이트 열리면 뒤로가기가 없어짐
+		}
+		
+		
+		 */
+		 //winObj 내가만든 팝업을 의미
+			winObj = window.open("","", "width=500, height=500");
+		 
+		var sel = frm.chooseSite;
+		sel.onchange = showSite;
+		
+		function showSite(){
+			winObj.location.href = sel.value;
+			//주소값으로 벨류 넣어주면 들어가서 사이트를 주면 팝업자체가 사이트로 변한다
+		}
+		//사용자가 클릭하면 그창을 새창으로 열어주는구문
+		 
+		 
+		
+	}	
+	
+	/*
+	여기서 창을 열었을 때, 변수를 받아서 
+	그변수로 열린 창의 요소를 찾을 수 있다
+	
+	*/
+	
+	
+		
+		
 
 </script>
 </head>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="euc-kr">
+<title> window 예제 </title>
+<script type="text/javascript">
+window.onload = function(){
+	winObj = window.open("연습팝업z.html","", "width=500, height=500");
+		 
+	var sel = frm.city;
+	 sel.onchange=function(){
+		 winObj.fm.result.value =  sel.value;
+		 //내 남 남 값
+
+	 }
+	
+}
+	
+
+</script>
+</head>
+<form name="frm">
+<body>
+		<select name="city" >
+			<option value="서울시">서울시</option>
+     	 <option value="인천시">인천시</option>
+      	<option value="부산시">부산시</option>
+      	<option value="울산시">울산시</option> 
+		</select></br>
+	
+		결과받기 : <input type='text' name='result' size='20'/></br>
+	 	
+</body>
+</form>
+</html>

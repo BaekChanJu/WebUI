@@ -4,7 +4,36 @@
 	<meta charset="UTF-8">
 	<title>자바스크립트 함수 만들기</title>
 	<script>
+	
+	//1021일
+	 //(1) function 키워드 함수
+	 function first() {
+		 let txt1 = document.querySelector('#first'); //<span id="first" 여기를 의미
+		 txt1.style.backgroundColor = '#CCCC44'; //즉 스팬을 txt1 변수에 담고 그걸변경
+		 txt1.style.color = '#321111';
+	} 
+	 
+	 //(2) 함수 리터럴로 만들어보기
+	let second = function(){
+		let txt2 = document.querySelector('#second');
+		txt2.style.backgroundColor = '#AAAA44'; 
+		txt2.style.color = '#321111';
+	 }
+	 
+	 
+	 //(3)Function 생성자로 만들어보기
+	 	//""안에 다 넣어야해서 한줄로 길게늘어짐 잘 안씀
+	 let third = new Function("let txt3 = document.querySelector('#third');txt3.style.backgroundColor = '#AAAB44'; txt3.style.color = '#321111';")
 
+	 
+		
+	 //(4) 화살표 함수로 만들어보기
+	 let fourth =() =>{
+		 let txt4 = document.querySelector('#fourth');
+			txt4.style.backgroundColor = 'blue'; 
+			txt4.style.color = '#321111';
+	 };
+	 
 	</script>
 </head>
 
@@ -12,10 +41,10 @@
 	<p> <span id="first"> 1. function 명령 </span>
 		<input type="button" value="확인" onclick="javascript:first()"/>
 	</p>
-	<p> <span id="third"> 2. 함수 리터럴 </span>
+	<p> <span id="second"> 2. 함수 리터럴 </span>
 		<input type="button" value="확인" onclick="javascript:second()"/>
 	</p>
-	<p> <span id="second"> Function 생성자 </span>
+	<p> <span id="third"> Function 생성자 </span>
 		<input type="button" value="확인" onclick="javascript:third()"/>
 	</p>
 

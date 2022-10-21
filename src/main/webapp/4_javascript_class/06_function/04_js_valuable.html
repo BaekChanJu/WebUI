@@ -4,6 +4,84 @@
 	<meta charset="UTF-8">
 	<title>자바스크립트 변수와 범위</title>
 	<script>
+	/*	//var 중심으로확인 > 나중에 let관련도 확인해보자
+		//1. 글로벌변수와 지역변수
+		var scope = '글로벌변수';
+		
+		function getValue(){
+			var scope = '지역변수';
+			return scope;
+		}
+		
+		document.write(getValue()); // 지역변수
+		document.write(scope); //글로벌변수
+		
+		//2.var를 안썻을때 - var를 안쓰면 그냥다 글로벌 변수 취급함
+		 scope = '글로벌변수';
+		
+		function getValue(){
+			 scope = '지역변수';
+			 test = '테스트';
+			return scope;
+		}
+		
+		document.write(getValue()); // 지역변수
+		document.write(scope); //지역변수
+		document.write(test); //테스트 지역변수인데 부르면 함수도없이 불렀는데 그냥 테스트 잘나옴
+		//그래서 var를 써야 우리가 기존알던 그 개념이랑 똑같이 쓸 수 있다
+		
+		//함수안에 지역변수 만들었던걸 출력하자나요? var를 안쓰면 그냥 다 글로벌변수 가되어버려서
+				//최종바뀐 그 값으로 바뀐다 */
+			
+				
+				
+	/*			
+		//3 그래서 즉 지역변수 선언을 앞에다 잘해주자
+		
+		var scope = '글로벌변수';
+		
+		function getValue(){
+			
+			document.write('<0>' + scope ); //언디파운드나옴 왜냐 실행하면서 함수안에 이미 스코프가
+			//없기떄문에 자바였으면 음 밖에선언한 글로벌이 나오지 않을까 싶었는데
+			
+			var scope = '지역변수';
+			
+			return scope;
+			
+		}
+		
+		document.write(getValue()); // 지역변수
+		document.write(scope); //글로벌변수
+		
+		//4. var 와 let의 범위
+		
+		if(true){
+      var i = 100;
+      let j = 100;
+   }
+   document.write('i= '+i + '<br/>'); // 나옴 var는 함수 블록 안에서만 지역변수취급함 지금은 if 문 안에 
+   //블록이여도 글로벌변수 취급함
+   document.write('j= '+j + '<br/>'); //하지만 let은 우리가 알던 개념과 같은
+   //지금의 j는 if문 안에 지역변수임
+   
+   */
+   
+   
+   //var는 함수의 블록  / 지금은 위에 함수가 뭐가 없으니 <script>부터가 함수라고 취급하는거임
+   //var a는 사실 3까지 나와야하는데 4가나오는이유는 for문안에서 3까지 완성되고 바깥에 출력문 a가 있으니
+   //나중에 a++까지 먹은게 대입이 되서 4가나옴
+   
+   
+   for(var a=0; a<4; a++){ }
+   for(var a=0; a<4; a++){ }
+   document.write('a= '+a + '<br/>');
+   
+   for(let a=0; a<4; a++){ }
+   for(let a=0; a<4; a++){ }
+   document.write('a= '+a + '<br/>');
+ //let으로 선언하면 렛은 {} 블록안에서만 지역변수로 취급해진행이되니 저  a는 언디파운드
+		
 
 	</script>
 </head>
