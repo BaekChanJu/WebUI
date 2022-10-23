@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+ 
+window.onload = function(){ //윈도우 칸이 안만들어져서 일단 윈도우부터 연동
+	
+	//클래스명으로 가져오라고하니 클래스명 동일한 item을 대려오고 변수에담기 (배열이니 반복문사용가능)
+	var btn = document.getElementsByClassName('item');
+	
+	
+	for(var i=0; i<btn.length; i++){
+		btn[i].onclick = function(evt){	 //btn변수는 배열이니 배열클릭됬을때 함수발현
+			var price = evt.target.getAttribute('price'); 
+			//요소의 속성값가져오기 getAttribute 이거사용 price는 속성값임
+			alert(price);
+		}
+	} //앤드for 
+			
+} // 윈도우 로딩
+
+
+
+</script>
+
+
+<style type="text/css">
+
+		#cafe {
+				border: 2px solid black;
+				height: 60px;
+				width: 100px;
+		}
+
+		td {background: yellow;}  /*각셀에지정이니 td에 따로 색 지정*/
+		
+		tr.first>td {background: blue;}
+		
+</style>
+</head>
+<body>
+		
+<table border='2' id='cafe'>
+	<tr class='first'><td class='item' price='1000'>커피</td> <td  class='item' price='2000'>녹차</td></tr>
+	<tr><td class='item' price='1500'>케익</td> <td class='item' price='2500'>빵</td></tr>
+	<tr><td class='item' price='4000'>과자</td> <td class='item' price='4500'>초콜렛</td></tr>
+</table>
+
+
+</body>
+</html>

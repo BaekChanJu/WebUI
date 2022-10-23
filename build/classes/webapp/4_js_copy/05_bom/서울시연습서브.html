@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>서울시연습서브</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			
+			//fm에 site라는 이름을 가진값들을  sel2 변수에 지정을했다
+				//참고로 input의 이름들이 다동일하니 값들이 this 그리고 반복문사용이 되겠네? 를 생각하면된다 (배열이라고)
+			var sel2 = fm.site;
+			
+			for(let i =0 ; i<sel2.length; i++){
+				sel2[i].onclick = function(){
+					opener.frm.inputT.value = this.value;
+					//오프너 중요하다 나라는 이팝업창을 만들어준 곳 을 의미한다
+					
+				} //end of fun
+			} //end of for
+			
+			
+			
+		}//end of window.onload
+	
+	</script>
+</head>
+<body>
+	<form name = 'fm'>	
+		<input type = 'radio' name = 'site' value = '가산값'>가산</br>
+		<input type = 'radio' name = 'site' value = '판교값'>판교</br>
+		<input type = 'radio' name = 'site' value = '부평값'>부평</br>
+		들어오는란 <input type = 'text' name = 'result' size='20'>
+		
+	
+	
+	</form>
+
+</body>
+</html>

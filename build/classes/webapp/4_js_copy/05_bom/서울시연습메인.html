@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>서울시연습메인</title>
+	<script type="text/javascript">
+	window.onload = function(){
+		
+		//1번 - 팝업창을 띄우기 위한 설정 즉  winObj는 팝업창을 의미
+		winObj = window.open("서울시연습서브.html", "", "width=600","height = 600");
+		
+		//2번 메인시티칸의 값들을 . 으로 찾아서 sel 변수에 저장
+		let sel = frm.mainCity;
+		
+			
+		//3.onchange 사용이벤트 발생 - onchange 는 select 값들  사용할때 사용이가능 
+			//정의는 html 요소에 변화가 일어났을떄!
+			//참고로 onclick은 사용자가 html 요소를 클릭했을때 이다
+		sel.onchange = function(){
+			winObj.fm.result.value = sel.value;
+			//sel.value 즉 지금 내값을 
+			//widObj.fm.result.value 팝업창.fm에있는.result라는 란의 value값으로
+			//넣는다 이뜻이다
+		}
+		
+		
+		
+	}//end of window.onload
+	
+	
+	
+	</script>
+</head>
+<body>
+	<form name = 'frm'>
+		<select name = 'mainCity'>
+			<option value = "서울특별시-값">서울특별시</option>
+			<option value = "인천광역시-값">인천광역시</option>
+			<option value = "대구광역시-값">대구광역시</option>
+			<option value = "광주광역시-값">광주광역시</option>
+			<option value = "대전광역시-값">대전광역시</option>
+		</select></br>
+			결과받기 칸 : <input type = 'text' name = 'inputT' size = '20'></br>
+	</form>
+
+</body>
+</html>

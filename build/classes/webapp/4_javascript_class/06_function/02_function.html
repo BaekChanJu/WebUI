@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>리터럴 함수</title>
+</head>
+<body>
+	<script>
+	//1021일
+	
+	//결과로 함수를 제일 앞에다 쓰자
+	
+	// @ function 명령은 정적인 구조이고, 
+	// @ Function 생성자와 함수리터럴은 실행시 판단한다.
+	
+	
+
+		//1번 함수선언이 뒤에있는데 실행이된다 > function 명령은 정적인 구조
+			//자바에서 스태틱같은 개념 triangle(4,3)만나서 찾아서 대려왔으니까 정도로 이해
+			//일반함수 정적이니 가능함
+	/* 		
+	document.writeln('삼각형의 면적은 2 ' +  triangle(4,3) + '</br>');
+	function triangle ( base, height ){
+				return base * height / 2;
+	} */
+	
+	
+	
+	//2번 인식을 못한다 triangle(4,3) 호출을해도 함수가 있는지 없는지 모르게된다
+		//리터럴 함수는 뒤에쓰면 인식을 못한다라고 기억하자
+		/* 
+		 document.writeln('삼각형의 면적은 ' +  triangle(4,3) + '</br>');		
+		var triangle = function( base, height ){
+			return base * height / 2;
+		} 	 */
+	
+	
+		
+		
+		
+	// @ 함수는 데이터형의 일종이다.
+	//1 번 그냥 함수를 담았던 triangle 를 하면? - 그냥함수를 호출하는거임 함수자체모양
+	/* var triangle = function( base, height ){
+			return base * height / 2;
+		}
+		
+		document.writeln('함수' +  triangle+ '</br>');
+		
+		
+		
+	//2.triangle() 하면? - 진짜실행해서 결론을 받는것임 - nan 뜸 값안너서
+					var triangle = function( base, height ){
+			return base * height / 2;
+		}
+		
+		document.writeln('함수' +  triangle()+ '</br>');
+	
+		 */
+		 
+		 
+		 //함수를 배열에 변수로 넣기도 된다! 왜냐 함수도 데이터값이니까
+		/*  function doA() {
+			 document.write('함수 A  <br/>');
+			
+		}
+		 
+		 function doB() {
+			 document.write('함수 B  <br/>');
+			
+		}
+		 
+		 var arr = [doA, doB];
+		 document.writeln(arr);
+		 console.log(arr);
+		 
+		 //호출은?
+			arr[0](); // arr[0] 원래배열은  / 하지만 함수긴하니 arr[0]();
+			arr[1]();
+			
+			//배열로 함수호출이되면 반복문도 가능하겠구나?? */
+					
+		
+					
+	//함수가 함수의 인자가 될수있다 매개변수가! 왜냐 계속말했든 함수도 하나의 데이터 값이니까
+	
+		//리터럴함수여서 
+		
+	/*var f1 = function() {return 2;}
+	var f2 = function() {return 1;}
+	var f3 = function(f) {return f * f;}
+	
+	//a1는2 a2는
+	var f4 = function(f1, f2, f3){
+		return f3(f1()+f2()); //a3는 3
+	}
+	
+	var result = f4(f1,f2,f3);
+	document.write(result);*/
+	
+	//위아 아래는 같은거다 f1,f2,f3을 없애고 f4에 매개변수로 함수를 바로넣어준거임
+	var f4 = function(f1, f2, f3){
+		return f3(f1()+f2()); //a3는 3
+	}
+	
+	var result = f4(function() {return 2;},function() {return 1;},function(f) {return f * f;});
+	document.write(result);
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Number 형과 형변환 </title>
+<script type="text/javascript">
+
+
+// 1. 숫자 형식 메소드 
+var su = 123.456789;
+document.writeln( su.toExponential(2)  + "<br/>" );	
+document.writeln( su.toFixed(3)  + "<br/>" ); //3번째 자리에서 반올림		
+document.writeln( su.toFixed(7) + "<br/>" );	//7번에서 반올림
+document.writeln( su.toPrecision(6)  + "<br/>" );	 //앞에서부터 6번째까지만 출력
+document.writeln( su.toPrecision(10)  + "<br/>" );	// 위와동일
+
+//-------------------------------------------------
+// 2. 형변환
+
+/* let n = '0770';
+document.write(typeof n); // 스트링나오는데 형변환 하려면
+
+//2가지 사용 앞에 0은 잘려서나옴 어차피 숫자라 의미가없음
+document.write(Number(n));
+document.write(ParseInt(n));
+
+<br/>
+let n1 = '123abc';
+document.write(typeof n1);
+
+document.write(Number(n1)); //NaN 뜸
+document.write(ParseInt(n1));//NaN 뜸
+ */
+
+document.write(type(123 +'4')); //숫자와 문자열을 더하면 문자열이되버림
+document.write(type(123 - '4')); //숫자와 문자열을 빼버리면 숫자가되버림
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

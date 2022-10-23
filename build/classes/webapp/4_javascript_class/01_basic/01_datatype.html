@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트의 자료형</title>
+<script type="text/javascript">
+
+/* 1. 자바스크립트는 데이터타입에 관대하다
+     변수를 선언할 때 데이타타입을 정하지 않는다
+		(1) 변수 선언 : var
+*/ 
+let b2 = '문자열';
+		//console.log('변수의 값 : ' + b2 );
+/*도큐먼트에서 아예 콘솔이 아닌 창에서 보기도 가능*/		
+document.write('변수의 값 : ' + b2 + "<br/>") //변수의값 : 문자열
+
+document.write('변수의 타입 : ' + typeof b2 + "<br/>");//변수의 타입 : String
+
+
+
+
+let b3 = 1000;	
+document.write('변수의 값 : ' + b3 + "<br/>") //변수의값 : 1000
+document.write('변수의 타입 : ' + typeof b3 + "<br/>"); //변수의 값 : number
+
+
+
+
+
+
+
+/*   (2) let  (es6)
+ 		- 변수의 중복 선언을 허용하지 않는다 // var는 변수중복이 되지만 let은 안된다
+ 		- 블럭 범위(scope)를 인식한다 -> 나중에 확인
+ */
+ 
+ //let 동일한 변수명 사용불가 / 윗단의 내용과 답이 동일
+let byensu3 = '문자열';
+	console.log('변수의 값 : ' + byensu3);	
+document.write('변수의 값 : ' + byensu3 + "<br/>")
+document.write('변수의 타입 : ' + typeof byensu3 + "<br/>");
+
+
+let byensu4 = 1000;	
+document.write('변수의 값 : ' + byensu4 + "<br/>")
+document.write('변수의 타입 : ' + typeof byensu4 + "<br/>");
+
+
+ 
+
+ /* (3) const : 상수선언 (es6)
+	- 값을 재대입 금지
+	- 명명 권장 : 모두 대문자에 단어사이는 _로 표시
+*/
+
+const PI=3.14; //const는 상수 즉 절대 변하지 않는값을 선언한다 그래서 pi에 값을 넣을 수 없다
+ //PI=5;
+ document.write('PI 값 ' + PI + '<br/>'); //오류남 pi가 const라 값 변경이 안됨
+ 
+ 
+//----------------------------------------------------------------
+// 2. 리터럴 - 변수의 값
+var   arr = [ '안녕', 'Hello', 'Hola', '곤니찌와' ];
+document.write(arr[2]+ '<br/>') // 0 1 2번째 홀라가 뜬다
+ 		
+var   arr2 = [ '안녕', [ 'Hello', 'Hola' ], '곤니찌와' ];
+document.write(arr2[1][1]+ '<br/>') //이중배열로 생각해서 01 번의 01번인 홀라가 뜬다
+
+var  obj = { x : '안녕',  y : 'Hello' ,  z : '곤니찌와' };
+document.write(obj.y + '<br/>') //.y로 불러오기 가능 / odj의 y를 가져와라 라는뜻
+document.write(obj['y'] + '<br/>') // ['y']로 불러오기도 가능 
+
+//존재하지도 않는값을 넣으면? - 1번3번은 언디파운드 2번은 arr3이 없으니 아예 에러 
+document.write(obj.a + '<br/>') //obj에 a는 없다 그럼 언디파운드 뜬다
+//document.write(arr3 + '<br/>') // 아예 arr3가 없으니 에러임
+document.write(arr[5] + '<br/>') // 언디파운드
+
+//-------------------------------------------------------
+/* 3. 분할 대입 (destructuring assignment) : (es6)
+ 			- 배열과 객체의 요소를 분할하는 부분
+ 		(1) 배열 분할*/
+ 		
+let data = [10, 20, 30, 40, 50];
+let a0 = data[0]; //10
+let a1 = data[1]; //20
+let a2 = data[2]; //30
+ document.writeln(a0+ a1+ a2 + "<br/>");   //60
+ console.log(a0, a1, a2 )
+ 
+ 
+ let [a,b,c,d,e] = date;
+ document.writeln("data[0] : " + a + "<br/>");
+ 
+ 
+ let [d1,d2,...others] = date;
+ document.writeln("d1 : " + d1 + "<br/>");
+ document.writeln("d2 : " + d1 + "<br/>");
+ document.writeln("others : " + others + "<br/>");
+ 
+ 
+ 
+ //자바에서 값 바꾸려면 temp로 이동하면서 했었어야함
+ //js ec6버전 부터는 
+ let v1 =100;
+ let v2 = 200;
+ 
+ [v1,v2] = [v2,v1];
+ 
+ 
+ 
+ /*  (2) 객체 분할
+  */
+ 
+</script>
+</head>
+<body>
+
+</body>
+</html>

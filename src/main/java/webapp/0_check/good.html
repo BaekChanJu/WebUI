@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>good.html</title>
+<!---스타일은 스타일대로-->
+<style type = "text/css">
+	#txt {color : blue; }
+</style>
+</head>
+
+
+<body>
+
+<!---정상 적인거-->
+
+<div id = 'txt'> 웹표준을 따름</div>
+
+</body>
+
+<!---동작구현은 동작구현대로-->
+<script type = "text/javascript">
+	var txt = document.getElementById("txt");
+	txt.onclick = function(){
+		alert("확인");
+	}
+
+</script>
+
+</html>

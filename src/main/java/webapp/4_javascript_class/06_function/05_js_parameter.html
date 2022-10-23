@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> 파라메터 인자</title>
+	<script>
+		//1. 함수의 인자로 기본형 (콜 바이 밸류)
+		var pri = 10;
+		
+		function priParam(pri){ //함수안에서만 쓰는 매겨변수임 / 글로벌변수의 복사본이라 생각하면편함
+			//이안에서 계산된 복사본은 원본 글로벌변수에 영향을 안미침 이라고 생각하자
+			pri --;
+			return pri;
+		}
+		
+		document.write(" 1. 기본형 인자 : " + priParam(pri)); //9 //여긴 함수안 지역변수계산
+		document.write(" 1. 기본형 인자 : " + pri); //10 글로벌변수 나옴
+		
+		
+		
+		//2. 함수의 인자로 참조형 (콜 바이 레퍼런스)
+		var ref = [1,2,3,4,5] //배열이니 참조형변수
+		function refParam(ref){
+			ref.pop(); // 마지막 들어간 5 없애는거
+			return ref;
+		}
+		document.write(" 1. 참조형 인자 : " + refParam(ref)); //1234
+		document.write(" 1. 참조형 인자 : " + ref); //1234
+		
+		//2군데 주소에서 같은 곳을 참조하고있음
+		 	//참조형은 원래랑 복사본이랑 같은곳을 가르키고있으니 원본을 수정하니 복사본도 수정되는거임
+		 	
+		 	//이것이(콜 바이 밸류) / (콜 바이 레퍼런스) 의 차이
+		 	
+		 		// 콜 바이 밸류)  - 원본에 영향 안미침
+		 		//콜 바이 레퍼런스) - 원본도 변함
+		
+		
+		
+
+	</script>
+</head>
+
+<body>
+
+  
+ </body>
+</html>

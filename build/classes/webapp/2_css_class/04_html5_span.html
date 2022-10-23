@@ -1,0 +1,100 @@
+<!-- 
+
+	각요소 (각엘리먼트) 를 찾기위한 명칭
+		-id : 브라우저(Front-end)에서 찾을 때 주로 사용
+				>유일한 이름이다
+		-class : 브라우저(Front-end)에서 찾을 때 주로 사용
+				>유일하지 않아도 됨 동일한 이름있어도 됨
+		-name : 서버로 전송하여 찾을 때 사용
+				>
+		
+		//언제어디서 사용하는지 모르니 다준다
+		06번에서 한 예시에서
+		id ='name' class= 'name 'name = 'name'
+		이렇게 동일하게 이름을 주면 찾기쉽다
+
+	# 요소의 특징
+		- block : <div>를 많이씀 기능은 없지만 무언가 묶고싶을때
+			-개행이 필요할때면 div태그
+		- inline : <span> 위와동일 아무역활은 없지만 딱 블록역활
+			-개행을하지 않으려면 span 태그 스팬쓰면 개행안하고 .  으로 쪼개준다
+
+ -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>부터 영역  | WebCafe</title>
+
+<style type="text/css">
+
+address { 
+	padding:0 0 15px 3px;
+	font-size:15px;
+	line-height:1.5;
+	color:#787878;
+} 
+
+address .addr {
+	padding-right:10px;
+	color : #9922cc;
+	font-size: 18px;
+}
+address .tel, address .fax {
+/*0 3 두개 주면 반복패턴임 03 03 이란뜻*/
+	padding: 0px 3px;
+	color : #aa3302;
+	font-family : Serif;
+}
+
+address .copyright {
+	padding-right:10px;
+	color : #ee1212;
+	font-size: 13px;
+}
+
+ div#footer ul.guideMenu > li{
+	display : inline;
+	padding : 20px;
+}
+
+ div#footer ul.guideMenu > li > a{
+ 	text-decoration : none;
+ }
+ 
+ .addr{cursor : pointer;}
+ .tel {cursor : crosshair;}
+ .fax{cursor:help;}
+ .email{cursor:progress;}
+
+</style>
+</head>
+
+
+<body>
+<div id="footer">
+  <div class="footerInner">
+    <p class="footerLogo"><img src="../images/common/logo_copyright.gif" alt="WebCafe" /></p>
+    <h2>사이트 이용안내</h2>
+    <ul class="guideMenu">
+      <li><a href="#">회사소개</a></li>
+      <li><a href="#">개인정보보호정책</a></li>
+      <li><a href="#">이메일주소무단수집거부</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Site map</a></li>
+    </ul>
+    <address>
+    	<span class="
+">서울시 마포구 상수동 123-12 한주빌딩 5층</span>
+    	<span class="tel">· 전화: 02-1234-1234</span> 
+		<span class="fax">· FAX: 02-1234-1234</span> 
+		<span class="email">· E-MAIL: webmaster@mail.com</span><br />
+   	 	<span class="copyright">Copyright ⓒ Web Cafe CORPORATION ALL RIGHTS RESERVED.</span>
+    </address>
+  </div>
+</div>
+</body>
+</html>

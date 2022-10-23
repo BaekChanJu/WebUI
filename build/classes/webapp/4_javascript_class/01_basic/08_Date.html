@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Date 객체</title>
+<script type="text/javascript">	
+ 	
+	/* var d = new Date('2023/08/15');
+	document.writeln( d  + '<br/>'); //Tue Aug 15 2023 00:00:00 GMT+0900 (한국 표준시) 
+	document.writeln( d.getYear()  + '<br/>'); //123 이상하게나옴 getFullYear 사용해야함
+	document.writeln( d.getFullYear()  + '<br/>'); //2023
+	document.writeln( d.getMonth() +1 + '<br/>'); //7 이나옴 +1을 꼭해줘야함
+	document.writeln( d.getDate()  + '<br/>'); //15
+	document.writeln( d.getDay()  +  '</hr>'); //화요일이 아닌 숫자 2로나옴 / 0번부터일요일 1번은 월요일 */
+
+
+	 /* var today = new Date(); //오늘 지금의 날짜와 시간들
+	 document.writeln(today  + '<br/>'); //Thu Oct 20 2022 19:09:00 GMT+0900 (한국 표준시)
+	 document.writeln(today.toLocaleString()  + '<br/>'); //2022. 10. 20. 오후 7:09:00
+	 document.writeln(today.toGMTString()  + '<br/>');//Thu, 20 Oct 2022 10:09:00 GMT / 이상함
+	 document.writeln(today.toDateString()  + '<br/>'); //Thu Oct 20 2022 */
+	 
+	 
+	 
+	
+	 ////////////////////////////////////////2025-05-12 일 지정하고싶음
+	 var day = new Date();
+	 //셋 으로 년 월 요일을 지정해준다 월은 -1을 해줘야한다
+	 day.setFullYear(2025);
+	 day.setMonth(5-1); //-안해주면 6월나옴
+	 day.setDate(12);
+	 document.writeln(day  + '<br/>');
+	 
+	 var today = new Date();
+ 	 //셋으로 월을 지정한다 근데 오늘의 달에서 -3을해라 그래서 10-7
+	 today.setMonth(today.getMonth() -3);
+	 document.writeln(today.toDateString()  + '<br/>');
+	 
+	  today.setMonth(today.getMonth() -3);
+	 document.writeln(today.toDateString()  + '<br/>');
+	
+	 //현재 날짜에서 20을 더하면?
+	 today.setDate(0); //일단 요일1을 기본으로설정해놈 근데 0을 넣으면 전달의 최고요일값을알수있음 0넣어보니 30이었음
+	 document.writeln(today.toDateString()  + '<br/>'); 
+	
+
+	
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

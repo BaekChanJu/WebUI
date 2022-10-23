@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>기본 샘플 확인</title>
+
+<!-- 1번 외부 css먼저연결 -->
+<!-- 부트스트랩 -->
+
+<!-- 2번 나만의 내부 css 설정 -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+<style type="text/css">
+tbody>tr:nth-child(odd) {
+	background: #f7f7f2;
+}
+
+.table tbody	tr:hover {
+	background: yellow;
+}
+</style>
+
+</head>
+<body>
+	<!--  ............................................................................  -->
+
+	<div>
+		<h2 class="text-primary">우리 스타 보기</h2>
+		<!-- 태이블 태그에 클래스 테이블을 해주면 테이블 구조로 바뀜 -->
+		<!-- 이유가 뭐냐면  bootstrap저 파일안에 css에 이미.table이라고 다만들어져있음
+        그걸 가져온 느낌임-->
+
+		<!-- table-bordered' 테이블에 테두리도 만들어줌 table-striped 해주면 홀수줄에 색도입혀줌
+         table-hover 해주면 마우스올리면 색이 변함 -->
+		<!-- 근데 table-striped table-hover 이거 2개는 회색으로 뭔가색이변해서 안이쁨 -->
+
+		<!-- 그래서   <link href="css/bootstrap.min.css" rel="stylesheet"> 
+         위처럼 외부 css를 먼저 연결하고 2번으로 나만의 내부 css를 따로설정해서 수정을해주는것임 -->
+		<table class='table table-bordered table-striped table-hover'>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>이름</th>
+					<th>직업</th>
+					<th>특징</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>203A</td>
+					<td>샤이니</td>
+					<td>가수</td>
+					<td>[소속]SM엔터테인먼트 [멤버]온유, 종현, 키, 최민호, 태민 [데뷔]2008년 싱글 앨범 '누난 너무
+						예뻐 (Replay)'</td>
+				</tr>
+				<tr>
+					<td>141B</td>
+					<td>소녀시대</td>
+					<td>가수</td>
+					<td>[멤버] 태연, 윤아, 수영, 효연, 유리, 티파니 영, 써니, 서현 [소속사] SM엔터테인먼트
+						[데뷔]2007년 싱글 앨범 '다시 만난 세계'</td>
+				</tr>
+				<tr>
+					<td>2031</td>
+					<td>김수현</td>
+					<td>배우</td>
+					<td>탤런트, 영화배우 출생 1988년 2월 16일 (만 30세) 신체 180cm, 65kg | AB형</td>
+				</tr>
+				<tr>
+					<td>007F</td>
+					<td>국카스텐</td>
+					<td>가수</td>
+					<td>[멤버] 하현우(보컬, 기타), 전규호(기타), 김기범(베이스), 이정길(드럼) [소속사] 인터파크
+						엔터테인먼트 [데뷔]2008년 싱글 앨범 'Guckkasten'</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+		<!-- ##############위에는 테이블태그썻고 화면이 작아지면 글자가 아래로 떨어짐 -->
+		<!-- 아래는 <div class = 'table-responsive'> div에 class명을 찾아서 추가해줬더니
+			화면이 작아져도 글씨가 아래로 떨어지지 않음 화면이 작아지면 옆으로 이동하는 스크롤이생김 -->
+		<hr />
+
+		<div class = 'table-responsive'>
+			<table class='table table-bordered table-striped table-hover'>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>이름</th>
+						<th>직업</th>
+						<th>특징</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>203A</td>
+						<td>샤이니</td>
+						<td>가수</td>
+						<td>[소속]SM엔터테인먼트 [멤버]온유, 종현, 키, 최민호, 태민 [데뷔]2008년 싱글 앨범 '누난
+							너무 예뻐 (Replay)'</td>
+					</tr>
+					<tr>
+						<td>141B</td>
+						<td>소녀시대</td>
+						<td>가수</td>
+						<td>[멤버] 태연, 윤아, 수영, 효연, 유리, 티파니 영, 써니, 서현 [소속사] SM엔터테인먼트
+							[데뷔]2007년 싱글 앨범 '다시 만난 세계'</td>
+					</tr>
+					<tr>
+						<td>2031</td>
+						<td>김수현</td>
+						<td>배우</td>
+						<td>탤런트, 영화배우 출생 1988년 2월 16일 (만 30세) 신체 180cm, 65kg | AB형</td>
+					</tr>
+					<tr>
+						<td>007F</td>
+						<td>국카스텐</td>
+						<td>가수</td>
+						<td>[멤버] 하현우(보컬, 기타), 전규호(기타), 김기범(베이스), 이정길(드럼) [소속사] 인터파크
+							엔터테인먼트 [데뷔]2008년 싱글 앨범 'Guckkasten'</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+
+		</div>
+
+
+
+	</div>
+
+
+	<!--  ............................................................................  -->
+
+	<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<h2>상대경로</h2>
+	<ul>
+	<!-- ../ 부모폴더에 올라간다라는 뜻  상대경로는 현재위치 기준으로 찾아가는것-->
+		<li><a href = '../0_check/good.html'>페이지</a></li>
+		<li><a href = '../images/sample/sensitive.jpg'>이미지</a></li>
+		<li><a href = '../iu.mp3'>음악</a></li>
+		<li><a href = '../yamahaR3.mp4'>동영상</a></li>
+	</ul>
+
+<hr/>
+
+
+<h2>절대경로</h2>
+<!-- /로 시작 시작부터 내려오는것-->
+	<ul>
+		<li><a href = '/WebUI/0_check/good.html'>페이지</a></li>
+		<li><a href = '/WebUI/images/sample/curry.jpg'>이미지</a></li>
+		<li><a href = '/WebUI/iu.mp3'>음악</a></li>
+		<li><a href = '/WebUI/yamahaR3.mp4'>동영상</a></li>
+	</ul>
+
+
+
+</body>
+<!-- 동영상 띄우는 구문 복붙해옴-->
+<video width="320" height="240" controls>
+  <source src="/WebUI/yamahaR3.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+</video>
+
+
+
+<!-- 비디오 띄우는 구문 복붙해옴 ogg는 없으니 안함-->
+<audio controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="../iu.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+
+
+
+<!-- 유튜브 느낌으로 iframe  부분적 독립으로 여러창가져올수있음-->
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe>
+
+<iframe width="420" height="315"
+src="https://www.nate.com">
+</iframe>
+
+
+
+
+</html>
