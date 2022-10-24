@@ -9,6 +9,67 @@
 //	 - 함수를 변수에 직접 할당하는 것이 아니라 함수의 결과물을 할당하기 위해 즉시 실행 함수를 사용(?)
 //	- 추후에 클로져와 관련
 
+/* 	let f = function(num){
+				docuement.write('num = ' + num + '<br>');
+				return num;
+	
+			} //end of f
+		
+	let func = f(10); //이함수의 결과값을 받는다라는건 return을 받는다라는 것이기에  return이 필요
+	docuement.write(func +'<br>' );
+			 */
+			 
+		//즉시 실행함수는 함수를 선언함과 동시에 바로 호출해버리기	
+		
+			/*  let func = function(num){
+					document.write('num = ' + num + '<br>');
+					return num;
+					}(10);
+					
+			docuement.write(func +'<br>' );
+			//여기는 일단 함수하나에 선언동시에 바로호출값이 있으니 찍어도 잘나옴 
+			 */
+			
+			
+// -----------------------------------------
+
+
+//js 는 함수도 리턴할 수 있다!
+
+
+ let byensu = function(num){
+				let fun = function(){
+					num--;
+					document.write('num = ' + num + '<br>');
+				};
+				return fun ;	//함수도 변수니 뭐 리턴이 상관없지? 근데 이렇게 돌리면 함수모양이나옴
+			}(10); //함수선언하면서 바로 매겨변수에 값까지 넣어버리기
+			
+	document.write(byensu +'<br>' );	//함수에대한 결과가 함수야 그럼 함수호출을 해주면되지 않을까?
+	byensu(); //함수안에 함수까지 있는경우니 여기는 호출까지해줘야 값이 나옴
+ 
+ 
+ 
+ 
+ let byensu2 = function(num){
+				return  function(){
+						num--;
+						document.write('num = ' + num + '<br>');
+				};
+		}(10); 
+
+		
+		
+		//함수를 리턴해버린 값이 변수에 담긴거니 함수모양이 나옴
+		document.write(byensu2 +'<br>' ); //함수전체식이나옴
+		
+		//함수호출을 해줘야 값이나옴
+		byensu2();//값인 9가나옴
+
+
+
+
+
 
 
 </script>

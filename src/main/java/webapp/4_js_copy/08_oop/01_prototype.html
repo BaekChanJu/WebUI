@@ -7,13 +7,13 @@
 <body>
 <script>
 
-//0. 	클래스 선언 -  생성자로 초기화하기
+//0. 	클래스 선언 -  생성자로 초기화하기 - 대문자라서 클래스임 
 function Student(id, name, dept){
-	this.id = id;
+	this.id = id; //this 를씀으로 멤버변수가됨
 	this.name = name;
 	this.dept = dept;
 	
-	this.display =function(){
+	this.display =function(){ //멤버함수 / 안에 함수가있으면 클래스구조다 생각
 		var str  = "학번: "+id;
 		str += "/이름:" + name;
 		str += "/학과:" + dept + "<br/>"; 

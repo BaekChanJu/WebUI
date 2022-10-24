@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	/* 1024 
+	이름 국어점수 영어점수 수학점수를 처리하는 클래스 선언
+	 	헤당 클래스 안에는 국영수 총점을 구하는 함수를 선언
+	
+	*/
+	
+	
+	function Student(name, kor, eng, math){
+		this.name = name;
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math
+		
+		/* this.sum = function(){
+			let result = kor + eng + math;
+			return result; */
+		}
+		
+		Student.prototype.sum = function(){
+			let result = this.kor + this.eng + this.math;
+			return result;
+		} //이렇게 나중에 따로 선언해도 된다라는것
+		//하지만 바깥으로 뻇으니 맴버변수 사용을위해 반드시 this 써주깅
+	
+	
+	let a = new Student("백찬주",50,50,50);
+	document.write(a.sum() + a.name+"님" + '<br>');
+	
+	let a2 = new Student("백구",20,80,40);
+	document.write(a2.sum() + a2.name+"님" + '<br>');
+	
+	
+	
+	/*
+	js에서 클래스는 동적인 추가가 가능하다
+		- 아래 픽스된 클래스 값안에 무언가 추가가 가능하다
+		-새로 showInfo 라는 함수를 추가한것
+		-다른 언어였으면 Student 클래스가 픽스됬으면 수정이 불가하다
+		-하지만 js는 이렇게 동적으로 추가가 가능하다 알아두기
+	*/
+	
+	a.showInfo = function(){
+		return(this.name + ':' + this.sum() + '<br>');
+	}
+	
+	document.write(a.showInfo());
+	
+	document.write(a1.showInfo()); // 백구의 값은 안나옴
+	//클래스가 있는데 a에만 showInfo 이걸 추가한거기 때문에
+	//a1은 showInfo 함수를 못찾음
+	//그래서 프로토타입을 쓰면되는데!
+	
+	
+	
+	//이렇게 해주면 스튜던트 클래스를 쓰는 모든 객체들이 다 쇼인포를 사용가능!
+	Student.prototype.showInfo = function(){
+		return(this.name + ':' + this.sum() + '<br>');
+	}
+	
+	//그럼 위에 sum도 사실 나중에 선언해도 되지 않을까??
+			//위에 처리함
+			
+		
+	//프로토타입에 함수를 큰 덩어리로 봐서 아래구조로도 가능		
+		Student.prototype = {
+			showInfo :  function(){
+				return(this.name + ':' + this.sum() + '<br>')
+				},
+			sum : function(){
+				let result = this.kor + this.eng + this.math;
+				return result;
+			}
+	}	
+	
+	
+	</script>
+</head>
+<body>
+
+</body>
+</html>

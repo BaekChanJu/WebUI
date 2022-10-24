@@ -8,14 +8,32 @@
 		 			콜백함수는 함수가 실행되는 중간에 호출되어 상태 정보를 저장하거나 결과 값을 처리할 때 사용
  */
  
-/* 		//------ 함수 선언
+/* 	//------ 함수 선언
 		  function add(a,b){
-			
+			let result = a+b;
+			return result;			
 		 }
 		
 		//------ 함수 호출
-		add(10,20); 
-*/
+		let resultVar = add(10,20); //결과를 바에담은것
+		document.write('리턴결과 : ' + resultVar);
+ */
+ 
+ 
+ /* 
+		//------ 함수 선언
+		 function add(a,b,c){
+				let result = a+b;
+				c(result); //c라는 결과에 값을 넣어줌
+				return result;			
+	}
+
+	//------ 함수 호출
+	let resultVar = add(10,20,function(res){
+						document.write('결과 : ' + res + '<br>');
+								}); //이덩어리가  c 한태 들어간다 생각
+	document.write('리턴결과 : ' + resultVar);
+ */
 		
 
 		

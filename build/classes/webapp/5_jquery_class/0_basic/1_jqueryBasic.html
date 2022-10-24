@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title> 첫 연습 </title>
+	<!-- 제이쿼리 라이브러리 연결먼저! -->
+	
+	<!-- 절대경로 src = '/WebUI/5_jquery_class/lib/jquery-3.6.1.min.js' -->
+	<!-- 상대경로는  src = '../lib/jquery-3.6.1.min.js' -->
+	
+	<!-- 라이버러리 직접 연동안할꺼면 제이쿼리 사이트에 있는 기본 폼 사용해도됨 이걸 CDN 방식이라함 -->
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
+<script type="text/javascript" src = '../lib/jquery-3.6.1.min.js'> </script>
+	<script type="text/javascript">
+/* 	
+	//준비가 됬을때  실행을한다 인자로 함수를 넣은거임
+	$(document).ready(function(){
+		//1번
+		$('div#here').hide();
+		$('#student>#name').text('홍돌이'); //값이 없으면 게터 값을 여기다 넣어주면 세터
+		
+		//2번 이렇게 변수안에 넣어서 js 처럼 사용가능!
+		var n = $('#student>#name');
+		alert(n.text()) //지정안했다 게터역활
+		n.text('홍이'); //텍스트함수로 무얼지정했다 그럼 세터
+		alert(n.text()) 
+	
+		});
+	
+	 */
+	 $(document).ready(function(){
+			$('div#here').click(function () {
+			$('div#here').text('마우스 클릭함')
+		}); 
+			//마우스가 올라갔을때
+			$('#here').mouseover(function () {
+			 $(this).text('마우스가 올라감')	//this는 here한번찾아놨으니 자신을의미
+			 $(this).css({'color':'red'})
+			
+		});
+			//마우스 내려갔을때
+			$('#here').mouseout(function () {
+				 $(this).text('마우스나감')	
+				 $(this).css({'color':'blue'})
+			
+		});
+			//인자가 함수가 2개인거다 호버는 마우스가 올라갔을경우 내려갔을경우 2개니까
+			$('#here').hover(function(){
+				$(this).css({'border' : '2px solid green'});
+			}, function(){
+				$(this).css({'border' : '2px dotted yellow'});
+			}); 
+			
+			
+			
+			//hide() 안보이게 할떄 / show() 보이게함
+			//효과함수
+			/* 
+			$('#here').fadeOut(1000); //1초 서서히 없어짐
+			$('#here').fadeIn(1000); //서서히 나옴
+			
+			//이렇게 페이드아웃후 다시나오게 이어서쓰는걸 체이닝 이라고한다
+			$('#here').fadeOut(1000).fadeIn(1000); */
+			
+			//슬라이드 업다운도 체이닝가능
+			$('#here').slideUp(2000).slideDown(2000);
+			
+			
+			//요소찾기 정확히
+			let s = $('#student');
+			let n = s.find('#name') //s의 자식을찾아서 변수에 저장
+			
+			
+			//그래서 변슈에 담아서 쓰면
+			//$('#student>#name').text('홍돌이'); 이렇게 안바꿔도된다
+			n.text('홍가'); // 글자를 가져오거나 바꿀때는 텍스트
+			
+			//html 도 동일하다 text와 하지만 태그까지 넣을 수 있다!
+			n.html('<span>짱가2</span>');
+			
+			
+			//기억! div나 자식들찾는거 변수에 담아서 편하게 사용할 수 있고
+			// text는 비어있으면 게터역활이고(가져오기)
+			//넣으면 세터로 값을 지정 즉 글씨변경
+			//html 도 동일하지만 태그까지 넣을수 있고 개발자모드에도 그 태그가 들어가있다
+			//find는 누구의 자식을 찾을때 사용이된다
+});
+	 
+	 
+	
+	
+	</script>
+
+
+
+
+
+</head>
+<body>
+	
+
+	<div id="here">
+	아자아자 제이쿼리~~!!! 
+	</div>
+	
+	
+	<div id="student">
+		<div id="name">홍길동</div>
+		<div id="age">34</div>
+	</div>
+
+
+	
+</body>
+</html>

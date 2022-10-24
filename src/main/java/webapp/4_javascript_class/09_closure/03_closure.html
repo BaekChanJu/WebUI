@@ -13,6 +13,35 @@
 //			아무튼 클로저를 이용하여 전역변수의 사용을 줄일 수 있다
 
 
+
+ 
+		//------ 함수 선언
+		 function add(a,b,c){
+				let result = a+b;
+				c(result); //c라는 결과에 값을 넣어줌
+				return function(){
+						result++;
+							return '공유결과는? : ' + result;
+							}; //함수를 리턴하려고한다	
+					//그럼 resultVar 에는 리턴된 저 함수가 들어가는 것이니 그냥 함수가나옴
+	}
+
+	//------ 함수 호출
+	let resultVar = add(10,20,function(res){
+						document.write('결과 : ' + res + '<br>');
+								}); //이덩어리가  c 한태 들어간다 생각
+	document.write('리턴결과 : ' + resultVar() + '<hr>'); //함수가 리턴된것이니 resultVar() 괄호가 있어야함
+	document.write('리턴결과 : ' + resultVar() + '<hr>');
+	document.write('리턴결과 : ' + resultVar() + '<hr>');
+	//클로저 지역변수를 계속 공유하면서 한번호출할때마다 값이 올라간다
+	
+	result =1000000;
+	
+	document.write('리턴결과2 : ' + resultVar() + '<hr>'); 
+	//위에 10000에 영향을 안받음 왜냐 함수를 지역변수로 선언해서 그안에서 공유되기때문에
+
+
+
 </script>
 </head>
 <body>

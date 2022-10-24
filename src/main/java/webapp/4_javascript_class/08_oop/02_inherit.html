@@ -18,7 +18,39 @@
 		};
 
 		// 자식클래스
-
+		let Dog = function(){}
+		Dog.prototype = new Animal(); // js에서 상속관계 맺는법!
+		//애니멀 객체를 만들어서 Dog에 넣어버리는것
+		
+		let d = new Dog(); // 사용하려면 객체를 생성해야 사용가능
+		
+		d.sound();
+		d.move();
+		
+		//부모의 함수를 오버라이딩해서 수정이가능!
+		Dog.prototype.sound = function(){
+			document.writeln('멍멍! <br/>');
+		}
+		
+		d.sound();
+		
+		//Human 이라는 클래스는 Animal 클래스를 상속받을꺼다
+		//Human 클래스의 객체를 생성하여 변수 ingan에 지정하자
+		//Animal 클래스의 move함수를 오버라이딩 해서 인간은 두발로 걷는다 출력
+		
+		let Human = function(){}
+		Human.prototype = new Animal();
+		
+		let ingan = new Human();
+		
+		Human.prototype.move = function(){ //오버라이딩 앞에는 Human이라는 본함수가 들어가야함
+			//객체로 만든 ingan 은 대입이나 호출시 사용
+			document.writeln(' 닝겐은 두발로 걷는다 <br/>');
+		}
+		
+		ingan.move();
+		
+		
 
 
 	</script>
