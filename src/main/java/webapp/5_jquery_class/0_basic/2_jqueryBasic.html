@@ -62,7 +62,67 @@
 			  $('#changeGrim').attr('src','images/cat.jpg');
 		  });
 	
+		 
+
+			//4. text() 태그사이의 문자를 가져오거나 지정하는 함수
+				//html() 위와 동일하지만 , 가져올땐 html요소로 인식하여 지정됨
+				//attr() 태그 안에 속성값을 가져오거나 지정하는 함수
+				
+				//val() : 사용자 입력값이나 선택값을 가져오고나 지정할떄
+					// -value 속성 값임!
+					
+					
+					//개발자모드에서는 변한게 보이진 않음
+					$('#tf').val('여기에 이름'); //이건 값을 지정했으니 세터겠지
+		 
+					$('#ta').val('설명을 합니다');
+					
+					$("#sel").val('incheon');
+					
+					$("#sel_m").val(['seom1','seom3']);
+					
+					
+			//5. 동적 요소를 생성하거나 이동할때
+				//부모요소.append(자식요소);
+				//자식요소.appendTo(부모요소);
+			
+   var actor = $('#actor');
+   var tae = $('#tae');
+   var su = $('#su');
+   var bin = $('#bin');
+   
+   
+   actor.append(tae);
+   actor.append(su);
+   actor.append(bin);
+   
+   
+   actor.append('<div id = "han" >한배우</div>');
+   
+   var n = $('<div/>');
+   n.text('두배우');
+   n.attr('id','du');
+   n.appendTo(actor);
+					
+					
+		 
+		 
+			
+			//6.
+		$('.data').each(function() {
+			$('.data').click(function () {
+				alert($(this).text())
+			})
+		});	
+			
+			
+			
+		 
 	});
+	
+	
+	
+	
 
 
 
