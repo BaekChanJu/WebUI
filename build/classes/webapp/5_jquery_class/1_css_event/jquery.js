@@ -17,6 +17,7 @@ $(function(){
 		$('#intro').toggle(); //fadeToggle, slideToggle도 있음
 		
 	})
+	
 	/*
 	//토글을 안썻다면
 		$('#toggleButton').on('click',function(){
@@ -34,6 +35,8 @@ $(function(){
    //제이쿼리 인덱스 0부터 시작함
    //홀수만 표현하고 싶다면 even을해야하고 짝수줄만 표현하고 싶으면 odd
  //  $('#celebs table.data > tbody > tr:even').css({'background' : 'lightblue'})
+ 
+ $('div#celebs table.data>tbody>tr:even').css({'background' : 'lightblue'})
    
    
    //html은 구조만 만들기임
@@ -46,13 +49,13 @@ $(function(){
     //마우스가 올라갔을때 배경색이 변했으면 좋겠다
 
     // $('#celebs tr').hover(function(){}, function(){});
-    $('#celebs tr').hover(function(){
+    $('#celebs table.data tbody>tr').hover(function(){  //#celebs tr
 		 $(this).addClass('td_mouseover'); //tr 너무많음 이벤트가 발생한 얘만 변해야하니 this
 	
 		}, function(){
 	 		$(this).removeClass('td_mouseover');
 	 })
-	 
+	
 })
     
 

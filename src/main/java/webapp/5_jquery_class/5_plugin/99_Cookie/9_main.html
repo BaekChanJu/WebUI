@@ -3,8 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <title>메인페이지</title>
+<script type="text/javascript"   src="http://code.jquery.com/jquery-1.9.0.js"></script>
+<script type="text/javascript"   src="js/jquery.cookie.js"></script>
 <script type="text/javascript">
-window.open("9_promotion.html","","width=400, height=360");
+$(function(){
+	
+	
+	//쿠키가 없을때만 열어야함 / 쿠키가 있으면 안열림 
+	//쿠키이름정한 것에 != 값no정한거 아닌경우
+	if($.cookie('pro') != 'no'){
+		window.open("9_promotion.html","","width=400, height=360");
+	}
+	
+	
+	
+	
+	
+	
+})
+
+
+
+
+	
 </script>
 </head>
 <body>

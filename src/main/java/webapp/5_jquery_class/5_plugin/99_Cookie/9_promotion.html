@@ -3,11 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <title>광고페이지</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript">
+	$(function(){
+		
+		//닫기버튼이 눌렸을때 체킹이됬나 안됬나 여부를 확인해야함 is가 여부임 /속성찾을땐 []
+		$('#closeWin').click(function() {
+			var chk = $('input[type="checkbox"]').is(':checked')
+			//얼럿으로  확인하면 체크가 됬으면 트루가 들어오고 안되있으면 풜스가 들어옴
+			
+			if(chk){
+				$.cookie('pro','no',{ecpires:1}); // 트루일때 즉체크됬을때 하루 안띄움 ''안 값은 내맘
+				window.close();
+			}
+			
+			
+			
+		})//end func
+		
+	})//end dom
+	
+		
+	
+</script>
 </head>
 <body>
-<img alt="" src="./images/image.jpg"><br/>
+<img alt="" src="./images/image.jpg" id=><br/>
 이 페이지를 오늘 하루 열지 않겠습니다.
-<input type="checkbox">
+<input type="checkbox"  >
 <input type='button' id='closeWin' name='closeWin' value='닫기'/>
 </body>
 </html>

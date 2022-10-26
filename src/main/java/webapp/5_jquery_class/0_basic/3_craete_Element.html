@@ -10,72 +10,35 @@
 	  //2.사용자가 입력한 값을 가져오기
 	  //3. 동적으로 tr/td 요소를 만들어서 사용해야함
 	  //4.그걸 테이블 태그에 붙이기
-	  
-	  
-	 //1번 클리어
+
 	  $('#bInsert').click(function(){
-		  var name = $('#name').val();
-		  var age = $('#age').val();
-		  var tel = $('#tel').val();
-		  var addr = $('#addr').val();
+		  let name = $('#name').val();
+		  let age = $('#age').val();
+		  let tel = $('#tel').val();
+		  let addr = $('#addr').val();
 		  
-		  var tr = $('<tr/>'); //3번 tr을 만들고  리스트 가로 긴바
+		  let tr = $('<tr/>');
 		  
-		  var td1 = $('<td/>').text(name); //리스트에 요소들td를 생성하고 값 붙히기
-		  var td2 = $('<td/>').text(age);
-		  var td3 = $('<td/>').text(tel);
-		  var td4 = $('<td/>').text(addr);
-		  var td5 = $('<td><button class = "btn">삭제</button></td>')  //삭제버튼만듬
+		  let td1 = $('<td/>').text(name);
+		  let td2 = $('<td/>').text(age);
+		  let td3 = $('<td/>').text(tel);
+		  let td4 = $('<td/>').text(addr);
+		  let td5 = $('<td><button class = "btn">삭제</button></td>')
 		  
-		  tr.append(td1); //tr에 어팬드로 붙히기
+		  tr.append(td1);
 		  tr.append(td2);
 		  tr.append(td3);
 		  tr.append(td4);
 		  tr.append(td5);
 		  
+		  //  tr.append([$('<td/>').text(name), $('<td/>').text(age),
+			  			//	$('<td/>').text(tel),$('<td/>').text(addr)]) 배열로 어팬드
 		  
-		  //4번
+			
 		  $('#listTable').append(tr);
 		  
-		  
-		  
-	  }); //
+	  })
 	  
-	  
-	/*  이걸 하조금 줄이면
-	   var name = $('#name').val();
-		  var age = $('#age').val();
-		  var tel = $('#tel').val();
-		  var addr = $('#addr').val();
-		  
-		  var tr = $('<tr/>'); 
-		  
-		  var td1 = $('<td/>').text(name); //리스트에 요소들td를 생성하고 값 붙히기
-		  var td2 = $('<td/>').text(age);
-		  var td3 = $('<td/>').text(tel);
-		  var td4 = $('<td/>').text(addr);
-	  
-		  
-		  
-		  
-		  이렇게 값을 텍스트로 바로 받을 수 도 있음
-		  var td1 = $('<td/>').text($('#name').val());
-		  
-		  또 배열로 다 줄이기도가능
-		  
-		  tr.append([$('<td/>').text(name), $('<td/>').text(age),
-			  				$('<td/>').text(tel),$('<td/>').text(addr)])
-		  
-	  */
-	  
-
-	
-	  //가장 베스트 코딩
-	    //채우기
-	    
-	    
-	    
-
 	  
 	  
   })//end of fun
@@ -117,7 +80,7 @@
 </table>
 <hr>
 <h2> 고객정보 목록보기  </h2>
-<table border = 1 id="listTable">
+<table border = 1 id="listTable" class = "listTable">
 	<tr>
 		<td width="80" align="center">Name</td>
 		<td width="50" align="center">Age</td>
