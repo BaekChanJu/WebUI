@@ -10,9 +10,40 @@
 <script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/i18n/jquery-ui-i18n.min.js"></script>
 
 
+<script type="text/javascript">
+$(function () {
+	   $.datepicker.setDefaults($.datepicker.regional['ko']); //한글로변환
+	   $('#datepicker').datepicker({
+		   showOn : 'button', //버튼하나 만들어주고
+		   buttonImage : 'images/calendar.gif' ,//버튼안이뻐서 저장한 사진으로 교환
+		   showButtonPanel : true,
+		   showAnim : 'slideDown'
+	   });
+	   
+	   
+	   //날짜 지정
+	   var mydate = new Date('2020-02-02')
+	   
+	   $('#datepicker').datepicker('setDate', mydate); //하나인경우는 {} 안사용
+	   //변수에 저장한 날짜로 셋 즉 지정할꺼야!
+	
+
+	   
+	   
+	   
+	})
+	//즉 이거는 브라우저에서 나오는 날짜가 아님 
+	//브라우저에서하려면 인풋 타입에 데이트 넣으면됬는데 우리는 새로 위에함수로 플러그인을 만든것임
+
+
+
+</script>
+
 </head>
 <body>
 <label for="date">날짜:</label>
-<input id="datepicker" type="text">
+<input id="datepicker" type="text"> <!-- type = 'date' 했으면 브라우저에서제공ㄴ -->
+
+<input type="date">
 </body>
 </html>

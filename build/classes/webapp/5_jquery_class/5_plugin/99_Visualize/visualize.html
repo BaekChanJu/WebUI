@@ -3,7 +3,20 @@
 <head>
 <meta charset="UTF-8" />
 <title>Visualize</title>
-<script type="text/javascript"  src=""></script>
+<link rel='stylesheet' type='text/css' href='./css/visualize.css'>
+<link rel='stylesheet' type='text/css' href='./css/visualize-dark.css'>
+<script type="text/javascript" src='../../lib/jquery-3.6.1.min.js'></script>
+<script type="text/javascript" src='./js/visualize.jQuery.js'></script>
+
+<script type="text/javascript" >
+$(function(){
+   $('#data').visualize({type : 'bar'});   // bar 그레프
+   $('#data').visualize({type : 'pie'});   // pie 그래프
+   $('#data').visualize({type : 'area'});   // area 그래프
+   $('#data').visualize({type : 'line'});   // 선 그래프
+})
+
+</script>
 
 </head>
 <body>

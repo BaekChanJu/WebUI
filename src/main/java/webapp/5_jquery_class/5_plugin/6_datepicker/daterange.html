@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 1번 css -->
+<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.0/themes/ui-lightness/jquery-ui.css" />
+<script type="text/javascript"  src="http://code.jquery.com/jquery-1.9.0.js"></script>
+<script type="text/javascript"   src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/i18n/jquery-ui-i18n.min.js"></script>
+
+<script type="text/javascript">
+$(function (){
+	
+	//<div id = 'today'> </div> 여기 사이에 글쓰고싶으면  text
+	$('#today').text(new Date()); //원래 js에서 오늘날짜 나오게하던
+	
+	
+	
+	///////////////////////아래 폼 만들어놨으니 누르면 달력뜨게
+	//데이트 키커 사용해서만들어 보자
+	  $.datepicker.setDefaults($.datepicker.regional['ko']);
+	
+	 $('#fromDate').datepicker({
+		 showOn : 'button', 
+		   buttonImage : 'images/calendar.gif' ,
+		   showButtonPanel : true,
+		   showAnim : 'slideDown',
+		   minDate : 0, // 오늘날짜 이전거 실행안되게해줌
+		   onClose : function(selectedDate){ //종료일이 시작일보다 전일일수없으니까 / 사용자가 선택한 날짜 인자로받음
+			   $('#toDate').datepicker('option','minDate',selectedDate);
+		   		//종료일자의 옵션을바꾼다 최소일자로 선택한 날자로
+		   		//시작일에 10/28일하면 종료일자는 10/29일부터 지정이가능하게한다
+		   }
+	 });
+	 
+	 $('#toDate').datepicker({
+		 showOn : 'button', 
+		   buttonImage : 'images/calendar.gif' ,
+		   showAnim : 'slideDown',
+		   onClose : function(selectedDate){ //종료일이 시작일보다 전일일수없으니까 / 사용자가 선택한 날짜 인자로받음
+			   $('#fromDate').datepicker('option','maxDate',selectedDate);
+		   		//종료일자의 옵션을바꾼다 최소일자로 선택한 날자로
+		   		//시작일에 10/28일하면 종료일자는 10/29일부터 지정이가능하게한다
+		   }
+	 });
+	 
+	
+})
+
+
+
+
+
+
+</script>
+
+
+
+
+</head>
+
+<body>
+
+<!--  div 주니까 개행되서 span 사용 -->
+오늘날짜 : <span id = 'today'> </span>
+<hr/>
+<hr/>
+
+
+<!-- 사용자 선택을 했다라는건 써야하니 제대로 기입 -->
+<form >
+<!-- for 과 id 이름 이 같아야함 같이 묶어야하니까 이게 권장사항임 -->
+	<label for = 'fromDate'>시작일자</label>
+	<input id= 'fromDate' name='fromDate' type ='text'>
+	~
+	<label for='toDate'>종료일자</label>
+	<input id= 'toDate' name='toDate' type ='text'>
+
+
+</form>
+
+
+</body>
+</html>

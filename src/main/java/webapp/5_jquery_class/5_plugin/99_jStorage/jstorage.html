@@ -10,7 +10,39 @@
   <script type="text/javascript" src="js/jstorage.min.js"></script>
 
   <script type="text/javascript">
-
+	$(function(){
+		
+		
+		//저장이 개발자모드에서 저장된거 확인했으면 
+		//jStorage 에 저장된 값을 얻어서 화면에 출력
+			//~의 값가져오기 jStorage.얻어온다 무엇을 ~
+		$('#name').val($.jStorage.get('name'));
+		$('#memo').val($.jStorage.get('memo'));
+		
+		$('#set').click(function(){
+			var n = $('#name').val(); //원래 인풋태그에 바라는 속성이있어서 사용가능
+			var m = $('#memo').val();
+			
+			$.jStorage.set('name',n);//name이라고 내가지정한 이름에 n값을 지정
+			$.jStorage.set('memo',m);
+		})
+		
+		
+		//키값의 이름을 찾아서 삭제를 해주는것임
+			//그래서 갱신까지 시켜줘서 갱신될시 입력된 값은 더이상 안떠야함
+			//개발자 모드에서 도 안뜸
+		$('#del').click(function(){
+			$.jStorage.deleteKey('name');
+			$.jStorage.deleteKey('memo');
+			location.reload(); //화면다시갱신
+		})
+		
+		
+		
+		
+	}); //end DOM
+  
+  
   </script>
 </head>
 <body>
