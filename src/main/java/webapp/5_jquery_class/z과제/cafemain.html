@@ -10,7 +10,7 @@
 </head>
 <body>
 
-
+<form name ='frm'>
 <div id="start">
 <table class="menuTbl">
 	<tr id="menuTitle">
@@ -159,22 +159,23 @@
 <table id="listTable">
 	<tr id="listtitle">
 		<th colspan=3 id="titleText"><center>주문내역</center></th>
+		<th><input type='button' value='전체삭제' class="button_shadow" id='btn'/></th>
+		<th><input type='button' value='구매하기' class="button_shadow" id='btn2'/></th>
 	</tr>
 	<tr id="totallist" >
 		<td colspan='3'>
-			총합 : <input type='text'  id='total' /> 원 
+				총합 : <input type='text'  id='total' /> 원 
 			<input type='button'	value='주문하기'  id='btn'/>
 		</td>
 	</tr>
 	<tr id="listtr" >
 		<td width="150">목록</td>
 		<td width="100">갯수</td>
-		<td width="100">합</td>
-		<td width="50">삭제</td>
+		<td width="50">가격</td>
 	</tr>
 	
 </table>
 </div>
-
+</form>
 </body>
 </html>

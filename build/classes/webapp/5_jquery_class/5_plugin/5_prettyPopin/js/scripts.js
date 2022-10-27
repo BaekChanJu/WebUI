@@ -1,6 +1,7 @@
 $(function(){
 	
-	//a의 속성값으로 가져온것임  / 2개뿐이니 first last 로도 됬음
+	//a의 속성값으로 가져온것임 속성값은 [] 안에 담기가능 
+		//2개뿐이니 first last 로도 됬음
 	$('a[rel="prettyPopin"]:eq(0)').prettyPopin({
 		width:500
 	});
